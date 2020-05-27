@@ -2,7 +2,7 @@ from DATA_STRUCTURES.Linked_List.Node import Node
 
 
 class LinkedList:
-    def __int__(self):
+    def __init__(self):
         self.start=None
 
 
@@ -41,4 +41,9 @@ class LinkedList:
         #After traversing the node we will update the last Node'next to the new Node
         last_Node.next=newNode
 
-
+    def Printing_The_LinkedList(self):
+        "This function is for printing the Linked list"
+        node=self.start
+        while(node):
+            print(node.value)
+            node=node.next
