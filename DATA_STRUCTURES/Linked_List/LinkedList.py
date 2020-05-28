@@ -59,7 +59,16 @@ class LinkedList:
             previous_node=last
             last=last.next
         previous_node.next=last.next
-
+    def delete_theLastNode(self):
+        "This function is for deleting the last ndode of the linked list"
+        last=self.start
+        while(last.next):
+            if last==None:
+                break
+            previous_Node=last
+            last=last.next
+            last
+        previous_Node.next=None
 
 # if __name__ == '__main__':
 #     link=LinkedList()
@@ -69,10 +78,11 @@ class LinkedList:
 #     link.insert_Node_atTheBeginning(40)
 #     link.Printing_The_LinkedList()
 #     link.deleting_from_the_value(20)
+#     link.delete_theLastNode()
 #     print("Afterwards")
 #     link.Printing_The_LinkedList()
-#
-#
-#
-#
+
+
+
+
 #
