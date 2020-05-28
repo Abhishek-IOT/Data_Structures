@@ -50,6 +50,17 @@ class LinkedList:
     def deleting_the_StaringNode(self):
         "This function will delete the staring node of the Linked List"
         self.start=self.start.next
+    def deleting_from_the_value(self,data):
+        "This function will delete by taking the value"
+        last=self.start
+        while(last):
+            if(last.value==data):
+                break
+            previous_node=last
+            last=last.next
+        previous_node.next=last.next
+
+
 # if __name__ == '__main__':
 #     link=LinkedList()
 #     link.insert_Node_atTheBeginning(10)
@@ -57,11 +68,11 @@ class LinkedList:
 #     link.insert_Node_atTheBeginning(30)
 #     link.insert_Node_atTheBeginning(40)
 #     link.Printing_The_LinkedList()
-#     link.deleting_the_StaringNode()
+#     link.deleting_from_the_value(20)
 #     print("Afterwards")
 #     link.Printing_The_LinkedList()
 #
-
-
-
-
+#
+#
+#
+#
