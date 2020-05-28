@@ -70,17 +70,32 @@ class LinkedList:
             last
         previous_Node.next=None
 
-# if __name__ == '__main__':
-#     link=LinkedList()
-#     link.insert_Node_atTheBeginning(10)
-#     link.insert_Node_atTheBeginning(20)
-#     link.insert_Node_atTheBeginning(30)
-#     link.insert_Node_atTheBeginning(40)
-#     link.Printing_The_LinkedList()
-#     link.deleting_from_the_value(20)
-#     link.delete_theLastNode()
-#     print("Afterwards")
-#     link.Printing_The_LinkedList()
+    def Searching(self,data):
+        last=self.start
+        while(last!=None):
+            if(last.value==data):
+                return True
+
+            last=last.next
+            return False
+
+
+if __name__ == '__main__':
+    link=LinkedList()
+    link.insert_Node_atTheBeginning(10)
+    link.insert_Node_atTheBeginning(20)
+    link.insert_Node_atTheBeginning(30)
+    link.insert_Node_atTheBeginning(40)
+    link.Printing_The_LinkedList()
+    link.deleting_from_the_value(20)
+    link.delete_theLastNode()
+    print("Afterwards")
+    link.Printing_The_LinkedList()
+    search=link.Searching(40)
+    if(search==True):
+        print("the element is there")
+    else:
+        print("Not found")
 
 
 
