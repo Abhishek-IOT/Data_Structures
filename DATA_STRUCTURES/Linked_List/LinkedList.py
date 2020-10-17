@@ -78,26 +78,67 @@ class LinkedList:
 
             last=last.next
             return False
+    """
+    I Will be using merge sort for sorting the Linked List as it is one of the best way for sorting linkedLIST.
+    """
+    def Merge_The_Sorted(self,left,right):
+        "This function for merging the sorted Linked list as It uses the Divide and conquer Technique"
+        if left==None:
+            return right
+        if right==None:
+            return left
+        if left.data<=right.data:
+            result=left
+            result.next=self.Merge_The_Sorted(left.next,right)
+        else:
+            result=right
+            result.next=self.Merge_The_Sorted(left,right.next)
+    def MergeSort(self,startNode):
+        if(startNode==None or startNode.next==None):
+            return startNode
+        middle=self.GetMiddle(startNode)
+        nexttomiddle=middle.next
+        left=self.MergeSort(startNode)
+        right=self.MergeSort(nexttomiddle)
+        sortedList=self.Merge_The_Sorted(left,right)
+        return sortedList
+
+
+
+
+
+
+    def GetMiddle(self,startNode):
+        if(startNode==None):
+            return startNode
+        slow=startNode
+        fast=startNode
+        while(fast.next!=None and fast.next.next!=None):
+            slow=slow.next
+            fast=fast.next.next
+        return slow
+    def ListPriny(self,start):
+        if start is None:
+            return
+        curr=start
+        while(curr):
+            print(curr.data)
+            curr=curr.next
+        print(' ')
+
+
 
 
 if __name__ == '__main__':
     link=LinkedList()
     link.insert_Node_atTheBeginning(10)
+    link.insert_Node_atTheBeginning(50)
+    link.insert_Node_atTheBeginning(70)
     link.insert_Node_atTheBeginning(20)
-    link.insert_Node_atTheBeginning(30)
-    link.insert_Node_atTheBeginning(40)
-    link.Printing_The_LinkedList()
-    link.deleting_from_the_value(20)
-    link.delete_theLastNode()
-    print("Afterwards")
-    link.Printing_The_LinkedList()
-    search=link.Searching(40)
-    if(search==True):
-        print("the element is there")
-    else:
-        print("Not found")
+    link.insert_Node_atTheBeginning(100)
+    link.insert_Node_atTheBeginning(55)
+    link.insert_Node_atTheBeginning(60)
 
 
 
 
-#
