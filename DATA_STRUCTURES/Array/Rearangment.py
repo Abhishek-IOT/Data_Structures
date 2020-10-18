@@ -12,6 +12,9 @@ class Rearangment:
                 arr[x]=x
                 x=y
                 print(y,"Tje value of y")
+            if arr[i]!=i:
+                arr[i]=-1
+            #This is for having the value that are not present so we will place -1 there
 
 
         for i in range(0,len(arr)):
