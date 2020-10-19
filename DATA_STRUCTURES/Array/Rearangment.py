@@ -14,7 +14,7 @@ class Rearangment:
                 print(y,"Tje value of y")
             if arr[i]!=i:
                 arr[i]=-1
-            #This is for having the value that are not present so we will place -1 there
+            #This is for having the value that are not present so we will place -1 there0
 
 
         for i in range(0,len(arr)):
@@ -22,5 +22,5 @@ class Rearangment:
 
 if __name__ == '__main__':
     rearrange=Rearangment()
-    arr=[3,1,2,0,4]
+    arr=[3,1,2,0,4,-1]
     rearrange.fix(arr)
