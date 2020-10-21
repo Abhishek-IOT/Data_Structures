@@ -9,8 +9,8 @@ class Selection_sort:
             arr[i]=arr[min_index]
             arr[min_index]=temp
         for i in range(len(arr)):
-            print(arr[i])
+            print(arr[i],end=" ")
 if __name__ == '__main__':
     sorting=Selection_sort()
-    arr=[20,4,16,5,9]
+    arr=[20,4,16,5,9,15,23]
     sorting.sort(arr)
