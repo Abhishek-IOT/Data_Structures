@@ -8,3 +8,10 @@ def reverse(A,start,end):
         A[end]=temp
         start=start+1
         end=end-1
+A=[]
+size=int(input())
+for i in range(size+1):
+    A.append(input())
+print(A)
+reverse(A,0,size)
+print(A)
