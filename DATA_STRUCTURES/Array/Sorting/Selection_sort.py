@@ -12,5 +12,5 @@ class Selection_sort:
             print(arr[i],end=" ")
 if __name__ == '__main__':
     sorting=Selection_sort()
-    arr=[20,4,16,5,9,15,23]
+    arr=[20,4,16,5,9,]
     sorting.sort(arr)
