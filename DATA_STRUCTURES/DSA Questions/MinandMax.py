@@ -5,7 +5,7 @@ class pair:
     def __init__(self):
         self.min=0
         self.max=0
-def getMinMax(arr,n):
+def getMinMax(arr,n,k):
     minmax=pair()
     if n==1:
         minmax.max=arr[0]
@@ -22,12 +22,13 @@ def getMinMax(arr,n):
         elif arr[i]<minmax.min:
             minmax.min=arr[i]
     return minmax
+
 if __name__ == '__main__':
     arr=[]
     n=int(input())
     for i in range(n+1):
         arr.append(input())
-    maxmin=getMinMax(arr,n)
+    maxmin=getMinMax(arr,n,2)
     print("The minimum element",maxmin.min)
     print("The maximum element",maxmin.max)
 
