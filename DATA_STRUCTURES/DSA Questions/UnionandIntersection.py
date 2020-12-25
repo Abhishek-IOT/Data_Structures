@@ -4,11 +4,14 @@ def union(arr1,arr2):
     print(arr1)
     # print(len(arr1))
     l=[]
+    p=[]
     for i in arr1:
         if i not in l:
             l.append(i)
+        else:
+            p.append(i)
     print(l)
-
+    print(p)
 
 if __name__ == '__main__':
     arr1=[1,2,3]
