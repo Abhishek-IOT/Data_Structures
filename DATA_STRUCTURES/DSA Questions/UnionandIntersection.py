@@ -1,3 +1,7 @@
+"""
+This is the program to implement the union and intersection
+INPUT=[1, 2, 3, 1, 6, 7]
+"""
 def union(arr1,arr2):
     for i in range(len(arr2)):
         arr1.append(arr2[i])
