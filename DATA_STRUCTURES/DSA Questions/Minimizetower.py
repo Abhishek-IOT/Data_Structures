@@ -13,3 +13,18 @@ Explanation: The array can be modified as
 {3, 3, 6, 8}. The difference between
 the largest and the smallest is 8-3 = 5.
 """
+def minimize(arr,size,k):
+    for i in range(size):
+        if arr[i]<=k:
+            arr[i]=arr[i]+k
+        else:
+            arr[i]=arr[i]-k
+    print(arr)
+    m=min(arr)
+    m1=max(arr)
+    diff=m1-m
+    return diff
+if __name__ == '__main__':
+    arr=[3, 9, 12, 16, 20]
+    m=minimize(arr,len(arr),3)
+    print(m)
