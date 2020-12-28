@@ -1,3 +1,12 @@
+"""
+
+Given two sorted arrays arr1[] of size N and arr2[] of size M.
+Each array is sorted in non-decreasing order.
+Merge the two arrays into one sorted array in non-decreasing order
+ without using any extra space.
+ LOGIC=First use the last index of the 1st array and then compare it with the array2 (if arr1[i]>arr[j]
+ Then swap the elements and then merge them.
+"""
 def sort(arr,n):
     for i in range(n):
         for j in range(i+1,n):
