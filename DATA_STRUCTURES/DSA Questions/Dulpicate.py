@@ -1,3 +1,11 @@
+"""
+find duplicate in an array of N+1 Integers
+Traverse the given array from start to end.
+For every element in the array increment the arr[i]%n‘th element by n.
+Now traverse the array again and print all those indices i for which arr[i]/n is greater than 1.
+Which guarantees that the number n has been added to that index.
+USing the hashmap approach we can solve this problem
+"""
 def sort(arr,n):
     for i in range(0, n):
         index = arr[i] % n
