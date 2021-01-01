@@ -49,7 +49,7 @@ def maxprofit(arr,size):
         maxpro = 0
     return maxpro
 if __name__ == '__main__':
-    arr= [7,6,4,3,1]
+    arr= [1,2,3,4,5]
     m=maxprofit(arr,len(arr))
     print(m)
     # getmax(arr,len(arr),2)
