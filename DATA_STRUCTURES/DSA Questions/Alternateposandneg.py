@@ -1,3 +1,15 @@
+"""
+Rearrange array in alternating positive & negative items with O(1) extra space.
+Given an array of positive and negative numbers, arrange them in an alternate fashion
+ such that every positive number is followed by negative and vice-versa.
+Order of elements in output doesn’t matter. Extra positive or negative elements should be moved to end.
+HINT=Use Quick sort to sort the array so that O(1) can be used (We are not using the Merge sort because it will take O(n)Space.
+Then we will have a sorted array and then we will just swap the elements till the negative index= postive index
+Input:  arr[] = {1, 2, 3, -4, -1, 4}
+Output: arr[] = {-4, 1, -1, 2, 3, 4}
+"""
+
+
 def quicksort(arr,low,high):
     if low<high:
         pi=part(arr,low,high)
@@ -36,6 +48,6 @@ def rearrange(arr):
         postive_index=postive_index+1
     print(arr)
 if __name__ == '__main__':
-    arr = [1, 2, 3, -4, -1, 4]
+    arr = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]
     n = len(arr)
     rearrange(arr)
