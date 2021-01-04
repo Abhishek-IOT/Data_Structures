@@ -1,3 +1,20 @@
+"""
+Triplet sum in Array
+Given an array A[] of N numbers and another number x,
+determine whether or not there exist three elements in A[] whose sum is exactly x
+A = [1, 4, 45, 6, 10, 8]
+sum = 22
+Ouput-"yes"
+Logic first sort the array and then have two pointer accordingly increase and decreace the pointers
+until the sum is there
+            elif l>k:
+                second_pointer=second_pointer-1
+            else:
+                first_pointer=first_pointer+1
+
+"""
+
+
 def sort(arr,size):
     for i in range(size):
         for j in range(size):
