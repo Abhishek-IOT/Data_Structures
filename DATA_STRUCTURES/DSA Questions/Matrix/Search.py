@@ -1,3 +1,12 @@
+"""
+Given an n x n matrix and a number x,
+find the position of x in the matrix if it is present in it.
+Otherwise, print “Not Found”. In the given matrix, every row
+ and column is sorted in increasing order.
+ The designed algorithm should have linear time complexity.
+ Logic do binary or linear search
+"""
+
 def search(arr,row,x):
     i=0
     j=row-1
