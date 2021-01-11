@@ -1,3 +1,7 @@
+"""
+Given a string S, check if it is palindrome or not.
+Logic=First take the reverse and then check if they are equal or not.
+"""
 def reverse(arr,arr2):
     i=len(arr)
     while(i>0):
