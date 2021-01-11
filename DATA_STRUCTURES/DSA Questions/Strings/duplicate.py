@@ -1,3 +1,7 @@
+"""
+Print all the duplicates in the input string
+Made the dictionary of all the alphabets and then increased the count of the mp if mp[i[>2 then print it.
+"""
 def duplicate(arr):
     mp=dict()
     test_list = list(map(chr, range(97, 123)))
