@@ -44,7 +44,7 @@ def next(arr,n):
 
 
 if __name__ == '__main__':
-    arr=[1,2,3]
+    arr=[1, 2, 3, 6, 5, 4]
     #    0 1 2 3 4
     next(arr,len(arr))
     # rev(arr,0,len(arr))
