@@ -1,5 +1,6 @@
 """
-
+Logic=To traverse from the last of array and find arr[i]<arr[i+1],then find the index which is greater than
+the index which we found in arrr[i]<arr[i+1],swap the arr[index] with arr[j] and then reverse the left array.
 """
 def rev(arr):
     arr=arr[::-1]
