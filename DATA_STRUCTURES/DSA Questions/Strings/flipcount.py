@@ -27,6 +27,7 @@ def getflipcount(s,expect):
         print("After",expect,"Filp",flipcount)
     return flipcount
 def flipcountforalternate(s):
+
     return min(getflipcount(s,'0'),getflipcount(s,'1'))
 if __name__ == '__main__':
     str = "0001010111"
