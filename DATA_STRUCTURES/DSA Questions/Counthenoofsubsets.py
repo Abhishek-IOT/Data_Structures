@@ -4,6 +4,12 @@ arr=[1,2,3,5]
     Then there will be two subset formed={1,2,5} and {3,5}.We have to return the count of subsets formed.
     We will use D.P for checking the knapsaxk problem.
 """
+def printmat(mat,row,col):
+    for i in range(row):
+        print("[ ",end=" ")
+        for j in range(col):
+            print(mat[i][j],end=" ")
+        print(" ]")
 def countofsubsets(arr,w):
     n=len(arr)
     dp=[[0for i in range(w+1)]for j in range(n+1)]
@@ -24,4 +30,5 @@ if __name__ == '__main__':
     arr=[1,2,3,5]
     w=8
     m=countofsubsets(arr,w)
+    # printmat(m,len(arr)+1,w+1)
     print(m)
