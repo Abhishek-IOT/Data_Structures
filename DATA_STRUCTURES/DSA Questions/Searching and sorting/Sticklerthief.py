@@ -21,9 +21,9 @@ def maxvalue(arr):
     for i in range(2, l):
         dp[i] = max(arr[i] + dp[i - 2], dp[i - 1])
 
-    return dp[-1]
+    return dp
 if __name__ == '__main__':
-    hval = [6, 7, 1, 3, 8, 2, 4]
+    hval = [1,3,4,2,5]
 
     # number of houses
     n = len(hval)

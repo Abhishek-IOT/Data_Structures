@@ -12,7 +12,7 @@ def countsubsets(arr,s1):
             if arr[i-1]<=j:
                 dp[i][j]=dp[i-1][j-arr[i-1]] or dp[i-1][j]
             else:
-                dp[i-1][j]
+                dp[i][j]=dp[i-1][j]
     return dp[n][s1]
 def minimumdiff(arr,sum1):
     s=countsubsets(arr,sum1)
@@ -28,10 +28,11 @@ def minimumdiff(arr,sum1):
     return max
 
 if __name__ == '__main__':
-    diff=10
-    arr=[1,2,5]
+    diff=6
+    arr=[-3, 1, 3, 5]
     s=sum(arr)
     s1=(s+diff)//2
+    print(s1)
     m=countsubsets(arr,s1)
     if m==True:
         print("Yes it exist")
