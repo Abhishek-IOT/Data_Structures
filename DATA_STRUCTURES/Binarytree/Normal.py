@@ -91,6 +91,18 @@ class BinarySearchTree:
             self.data=m
             self.left=self.left.delete(m)
         return self
+    def getlevelutil(self0,self,data,level):
+        if self==None:
+            return 0
+        if self.data==data:
+            return level
+        down=self.getlevelutil(self.left,data,level+1)
+        if down!=0:
+            return down
+        down=self.getlevelutil(self.right,data,level+1)
+        return down
+    def getlevel(self,data):
+        return self.getlevelutil(self,data,1)
 def build_tree(element):
     root=BinarySearchTree(element[0])
     for i in range(1,len(element)):
@@ -113,3 +125,5 @@ if __name__ == '__main__':
     tre.delete(9)
     tre.delete(17)
     print(tre.inorder_Traversal())
+    print(tre.getlevel(1))
+    print(tre.getlevel(17))
