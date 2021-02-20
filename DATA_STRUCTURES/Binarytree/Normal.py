@@ -38,15 +38,13 @@ class BinarySearchTree:
             e+=self.right.inorder_Traversal()
         return e
     def find_min(self):
-        min=0
-        if self.left:
-            min=self.left.inorder_Traversal()
-        return min[0]
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
     def find_max(self):
-        maxi=0
-        if self.right:
-            maxi=self.right.inorder_Traversal()
-        return maxi[-1]
+       if self.right is None:
+           return self.data
+       return self.right.find_max()
     def preorder(self):
         e=[]
         e.append(self.data)
@@ -75,6 +73,24 @@ class BinarySearchTree:
         else:
             rightsum=0
         return leftsum+rightsum+self.data
+    def delete(self,val):
+        if val<self.data:
+            if self.left:
+                self.left=self.left.delete(val)
+        elif val>self.data:
+            if self.right:
+                self.right=self.right.delete(val)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.left is None:
+                return self.right
+            elif self.right is None:
+                return self.left
+            m=self.left.find_max()
+            self.data=m
+            self.left=self.left.delete(m)
+        return self
 def build_tree(element):
     root=BinarySearchTree(element[0])
     for i in range(1,len(element)):
@@ -94,3 +110,6 @@ if __name__ == '__main__':
     print(tre.preorder())
     print(tre.postorder())
     print(tre.sumofall())
+    tre.delete(9)
+    tre.delete(17)
+    print(tre.inorder_Traversal())
