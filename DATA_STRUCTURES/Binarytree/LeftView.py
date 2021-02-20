@@ -6,21 +6,27 @@ Given a Binary Tree, print Left view of it. Left view of a
  Left side. The task is to complete the function leftView(),
  which accepts root of the tree as argument.
 """
-class TreeNode:
+class Node:
     def __init__(self,data):
         self.data=data
         self.right=None
         self.left=None
-    def Leftview(self,root):
-        if root is None:
-            return
-        print(root.data,end="  ")
-        self.Leftview(root.left)
-
+def Leftview(root):
+    maxlevel=[0]
+    leftviewutil(root,1,maxlevel)
+def leftviewutil(root,level,maxlevel):
+    if root is None:
+        return
+    if maxlevel[0]<level:
+        print(root.data)
+        maxlevel[0]=level
+    leftviewutil(root.left,level+1,maxlevel)
+    leftviewutil(root.right,level+1,maxlevel)
 if __name__ == '__main__':
-    t=TreeNode(10)
-    t.left=TreeNode(20)
-    t.left.left=TreeNode(40)
-    t.right=TreeNode(30)
-    t.left.right=TreeNode(60)
-    t.Leftview(t)
+    root=Node(1)
+    root.left = Node(2)
+    root.right = Node(53)
+    root.left.right = Node(51)
+    root.right.left = Node(52)
+    root.left.right.right = Node(50)
+    Leftview(root)
