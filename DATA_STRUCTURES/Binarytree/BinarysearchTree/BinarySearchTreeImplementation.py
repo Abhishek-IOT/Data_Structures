@@ -33,7 +33,32 @@ def search(root,key):
         else:
             return False
 
-
+def minval(root):
+    if root.left is None:
+        return root.data
+    return minval(root.left)
+def delete(root,key):
+    if key>root.data:
+        if root.right:
+            root.right=delete(root.right,key)
+    elif key<root.data:
+        if root.left:
+            root.left=delete(root.left,key)
+    else:
+        if root.left is None and root.right is None:
+            return None
+        elif root.left is None:
+            return root.right
+        elif root.right is None:
+            return root.left
+        val=minval(root.right)
+        root.data=val
+        root.right=delete(root.right,val)
+    return root
+def findmax(root):
+    if root.right is None:
+        return root.data
+    return findmax(root.right)
 if __name__ == '__main__':
     r = Node(50)
     r = insert(r, 30)
@@ -43,9 +68,9 @@ if __name__ == '__main__':
     r = insert(r, 60)
     r = insert(r, 80)
     inorder(r)
-    m=search(r,20)
-    if m is True:
-        print("Yes")
-    else:
-        print("No")
+    delete(r,60)
+    print()
+    inorder(r)
+    m=findmax(r)
+    print()
     print(m)
