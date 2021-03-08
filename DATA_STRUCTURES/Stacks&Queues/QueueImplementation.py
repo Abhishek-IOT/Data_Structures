@@ -37,6 +37,9 @@ class Queue:
         if self.isEmpty():
             print("Queue is empty")
         print(self.queue[self.rear])
+    def findmiddle(self):
+        m=self.size//2
+        print(self.queue[m])
 if __name__ == '__main__':
     q=Queue(10)
     q.enqueue(15)
@@ -46,3 +49,4 @@ if __name__ == '__main__':
     q.enqueue(153)
     q.printfront()
     q.printRear()
+    q.findmiddle()
