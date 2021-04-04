@@ -3,9 +3,9 @@ class Stack:
     def __init__(self):
         self.q1=Queue()
         self.q2=Queue()
-        self.size=0
+        self.curr_size=0
     def push(self,x):
-        self.size+=1
+        self.curr_size+=1
         self.q2.put(x)
         while(not self.q1.empty()):
             self.q2.put(self.q1.queue[0])
@@ -13,26 +13,26 @@ class Stack:
         self.q=self.q1
         self.q1=self.q2
         self.q2=self.q
-    def top(self):
-        if self.q1.empty():
-            return -1
-        return self.q1.queue[0]
     def pop(self):
         if self.q1.empty():
             return
         self.q1.get()
-        self.size-=1
-
-    def sizeof(self):
-        return self.size
+        self.curr_size-=1
+    def top(self):
+        if self.q1.empty():
+            return -1
+        return self.q1.queue[0]
+    def size(self):
+        return self.curr_size
 if __name__ == '__main__':
-    s=Stack()
-    s.push(1)
-    s.push(2)
-    s.push(3)
-    print(s.top())
-    print("Size=",s.sizeof())
-    s.pop()
-    print(s.top())
-    s.pop()
-    print("size=",s.sizeof())
+    stack=Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    print("current sizw",stack.size())
+    print(stack.top())
+    stack.pop()
+    print(stack.top())
+    stack.pop()
+    print(stack.top())
