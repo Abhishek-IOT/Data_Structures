@@ -1,20 +1,18 @@
-def makemin(arr,n):
-    s1=0
-    s2=0
-    for i in range(len(arr)-1):
-        if len(arr)==2:
-            break
-        arr.sort()
-        s1=s1+arr[0]+arr[1]
-        s2=arr[0]+arr[1]
-        # print("S1=",s1)
-        # print("S2",s2)
-        arr.remove(arr[0])
-        arr.remove(arr[0])
-        arr.append(s2)
-    s1=s1+sum(arr)
-    return s1
+def sumpair(arr,n,k):
+    i=0
+    j=n-1
+    while(i<=j):
+        if arr[i]+arr[j]==k:
+            return True
+        elif arr[i]+arr[j]<k:
+            i=i+1
+        else:
+            j=j-1
+    return False
 if __name__ == '__main__':
-    arr=[4,2,7,6,9]
-    m=makemin(arr,len(arr))
-    print(m)
+    arr=[1,5,9,10]
+    k=16
+    if sumpair(arr,len(arr),k):
+        print("YEs")
+    else:
+        print("No")
