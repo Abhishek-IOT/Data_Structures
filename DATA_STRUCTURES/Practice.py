@@ -1,15 +1,14 @@
-def bruteforce(arr):
-    m=[]
+def kadane(arr):
+    max_so=0
+    max_end=0
     for i in range(len(arr)):
-        s=0
-        for j in range(i,len(arr)):
-            s=s+arr[j]
-            m.append(s)
-    return m
+        max_end=max_end+arr[i]
+        if max_so<max_end:
+            max_so=max_end
+        if max_end<0:
+            max_end=0
+    return max_so
 if __name__ == '__main__':
     arr=[-1,-2,3,4,5]
-    n=len(arr)
-    m=bruteforce(arr)
+    m=kadane(arr)
     print(m)
-    print(max(m))
-
