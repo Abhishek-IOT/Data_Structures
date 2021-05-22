@@ -1,18 +1,15 @@
-def sumpair(arr,n,k):
-    i=0
-    j=n-1
-    while(i<=j):
-        if arr[i]+arr[j]==k:
-            return True
-        elif arr[i]+arr[j]<k:
-            i=i+1
-        else:
-            j=j-1
-    return False
+def bruteforce(arr):
+    m=[]
+    for i in range(len(arr)):
+        s=0
+        for j in range(i,len(arr)):
+            s=s+arr[j]
+            m.append(s)
+    return m
 if __name__ == '__main__':
-    arr=[1,5,9,10]
-    k=16
-    if sumpair(arr,len(arr),k):
-        print("YEs")
-    else:
-        print("No")
+    arr=[-1,-2,3,4,5]
+    n=len(arr)
+    m=bruteforce(arr)
+    print(m)
+    print(max(m))
+
